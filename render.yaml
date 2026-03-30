@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: silver-foundry-api
+    env: node
+    plan: free
+    buildCommand: npm install && pip3 install -r requirements.txt
+    startCommand: npm start
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
